@@ -24,7 +24,7 @@ graph TB
     B --> H[Nostr Identity Graph]
     C --> I[Sybil Resistance Layer]
 
-Core Components
+🎯 Core Components
 1. Work Verification Layer
 
     Zero-knowledge proofs of work completion
