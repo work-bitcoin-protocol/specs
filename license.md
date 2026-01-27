@@ -182,7 +182,7 @@ Community A ── Bitcoin ── Community B
 
 ---
 
-*This document is living specification. Last updated: 2026*
+*This document is living specification. Last updated: 2024*
 
 
 
