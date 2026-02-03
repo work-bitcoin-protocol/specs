@@ -293,6 +293,19 @@ Implement the Hybrid Model with:
     Gradual decentralization over time
 
 This balances privacy, accessibility, and security while allowing iterative improvement based on real-world usage.
+
+## 💬 Community Feedback from Bitcoin Stack Exchange
+
+Following the publication of a technical question on Bitcoin Stack Exchange [^bse-link], key insights and critiques from the community included:
+
+*   **Insight 1:** [Resumen breve de la observación más útil].
+*   **Critique 1:** [Resumen breve de la crítica más sólida].
+*   **Open Question Raised:** [Cita la pregunta técnica más perspicaz que quedó sin responder].
+
+This feedback is being evaluated for integration into the proposed model.
+
+[^bse-link]: [https://bitcoin.stackexchange.com/questions/130463/approaches-to-sybil-resistance-for-a-bitcoin-native-work-protocol]
+
 📚 References
 
     Douceur, J. R. (2002). "The Sybil Attack"
