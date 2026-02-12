@@ -318,6 +318,8 @@ This feedback is being evaluated for integration into the proposed model.
 
     Idena Documentation
 
+    Human work protocol(2026) el problema sybil explicación visual (RFC-001) https://youtu.be/Om-gXoy7s-A
+
 🗳️ Voting
 
 [To be filled during RFC review process]
