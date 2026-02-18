@@ -1,16 +1,16 @@
 # RFC-001: Sybil Resistance Mechanisms
 
-## 📋 Metadata
+## Metadata
 - **Status**: Draft
 - **Created**: 2024-01-28
 - **Authors**: Work Bitcoin Protocol Team
 - **Discussions**: *[GitHub Issue #1]*
 
-## 🎯 Abstract
+## Abstract
 
 This RFC explores mechanisms to prevent Sybil attacks in the Work Bitcoin Protocol, where a single entity creates multiple fake identities to exploit the work-to-Bitcoin system.
 
-## 🔍 Problem Statement
+## Problem Statement
 
 ### The Sybil Attack Vector
 In a system that converts verifiable human work to Bitcoin:
@@ -24,7 +24,7 @@ In a system that converts verifiable human work to Bitcoin:
 3. **Cost constraints**: Verification must be cheap enough for small work payments
 4. **Decentralization**: No single point of trust or failure
 
-## 📚 Existing Approaches
+## Existing Approaches
 
 ### 1. Proof-of-Personhood Protocols
 - **BrightID**: Social graph verification, but requires existing connections
@@ -45,7 +45,7 @@ In a system that converts verifiable human work to Bitcoin:
 - **Staking**: Capital requirement excludes the poor
 - **Bonding curves**: Works for tokens but not initial identity
 
-## 💡 Proposed Solutions
+## Proposed Solutions
 
 ### Hybrid Model: "Local Trust, Global Verification"
 
@@ -187,7 +187,7 @@ Cost vs. Security
 
     Our choice: Tiered - small payments low security, large payments high security
 
-🚀 Implementation Roadmap
+Implementation Roadmap
 Phase 1: MVP (Months 1-3)
 
     Local web of trust only
@@ -218,7 +218,7 @@ Phase 3: Advanced (Months 7-12)
 
     Decentralized dispute resolution
 
-❓ Open Questions
+Open Questions
 
     Initial seed selection: How to choose initial verifiers without central authority?
 
@@ -240,7 +240,7 @@ Phase 3: Advanced (Months 7-12)
 
     Attack simulations: Cost analysis of various Sybil attacks
 
-📊 Success Metrics
+Success Metrics
 Primary Metrics
 
     Sybil detection rate: >95% detection of fake identities
@@ -259,7 +259,7 @@ Secondary Metrics
 
     Dispute resolution time
 
-🤝 Alternatives Considered
+Alternatives Considered
 Alternative A: Pure Financial Bond
 
     Each user stakes $10 in Bitcoin
@@ -280,7 +280,7 @@ Alternative C: Pure Social Graph
 
     Rejected: Slow bootstrap, excludes isolated individuals
 
-💎 Recommendation
+Recommendation
 
 Implement the Hybrid Model with:
 
@@ -294,19 +294,9 @@ Implement the Hybrid Model with:
 
 This balances privacy, accessibility, and security while allowing iterative improvement based on real-world usage.
 
-## 💬 Community Feedback from Bitcoin Stack Exchange
+## Community Feedback from Bitcoin Stack Exchange
 
-Following the publication of a technical question on Bitcoin Stack Exchange [^bse-link], key insights and critiques from the community included:
-
-*   **Insight 1:** [Resumen breve de la observación más útil].
-*   **Critique 1:** [Resumen breve de la crítica más sólida].
-*   **Open Question Raised:** [Cita la pregunta técnica más perspicaz que quedó sin responder].
-
-This feedback is being evaluated for integration into the proposed model.
-
-[^bse-link]: [https://bitcoin.stackexchange.com/questions/130463/approaches-to-sybil-resistance-for-a-bitcoin-native-work-protocol]
-
-📚 References
+References
 
     Douceur, J. R. (2002). "The Sybil Attack"
 
@@ -320,7 +310,7 @@ This feedback is being evaluated for integration into the proposed model.
 
     Human work protocol(2026) el problema sybil explicación visual (RFC-001) https://youtu.be/Om-gXoy7s-A
 
-🗳️ Voting
+Voting
 
 [To be filled during RFC review process]
 
