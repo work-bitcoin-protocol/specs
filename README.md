@@ -17,7 +17,7 @@ Technical Architecture
 
 ```
 graph TB
-    A[Local Worker] --> B[Work Verification]
+    A -->[Local Worker] --> B[Work Verification]
     B --> C[Taproot Assets Issuance]
     C --> D[Lightning Network]
     D --> E[Bitcoin Settlement]
