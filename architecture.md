@@ -1,185 +1,199 @@
-# Work Bitcoin Protocol - Technical Architecture
+---
 
-## 🏗️ System Overview
+Work Bitcoin Protocol - Technical Architecture
 
-### Core Principles
-1. **Non-custodial**: Users control their keys and funds
-2. **Bitcoin-native**: Direct Bitcoin settlement, no intermediate stablecoins
-3. **Privacy-preserving**: Minimize data collection, maximize user privacy
-4. **Censorship-resistant**: No single point of failure or control
+System Overview
 
-## 📦 Technology Stack
+Core Principles
 
-### Layer 1: Bitcoin
-- **Base settlement layer**
-- Taproot-enabled for efficiency
-- Timechain for global state consensus
+· Non-custodial: Users control their keys and funds
+· Bitcoin-native: Direct Bitcoin settlement, no intermediate stablecoins
+· Privacy-preserving: Minimize data collection, maximize user privacy
+· Censorship-resistant: No single point of failure or control
 
-### Layer 2: Lightning Network
-- **Instant payment layer**
-- LND/Core Lightning implementation
-- AMP (Atomic Multi-Path Payments) for large work payments
+Technology Stack
 
-### Layer 3: Taproot Assets (Taro)
-- **Asset issuance layer**
-- Local work tokens as Taproot Assets
-- 1:1 Bitcoin redemption
+Layer 1: Bitcoin
 
-### Auxiliary Protocols
-- **Nostr**: Decentralized identity and reputation
-- **Fedimint**: Community custody (future consideration)
+· Base settlement layer
+· Taproot-enabled for efficiency
+· Timechain for global state consensus
 
-## 🧩 System Components
+Layer 2: Lightning Network
 
-### 1. Identity & Sybil Resistance Module
+· Instant payment layer
+· LND/Core Lightning implementation
+· AMP (Atomic Multi-Path Payments) for large work payments
 
+Layer 3: Taproot Assets (Taro)
+
+· Asset issuance layer
+· Local work tokens as Taproot Assets
+· 1:1 Bitcoin redemption
+
+Auxiliary Protocols
+
+· Nostr: Decentralized identity and reputation
+· Fedimint: Community custody (future consideration)
+
+System Components
+
+1. Identity & Sybil Resistance Module
+
+```
 ┌─────────────────────────────────────┐
-│ Identity Module │
+│         Identity Module              │
 ├─────────────────────────────────────┤
-│ • Nostr-based public keys │
-│ • Trust graph construction │
-│ • Attenuation scoring │
-│ • Physical verification oracle │
-│ • ZK-proofs of unique humanity │
+│ • Nostr-based public keys            │
+│ • Trust graph construction           │
+│ • Attenuation scoring                │
+│ • Physical verification oracle       │
+│ • ZK-proofs of unique humanity       │
 └─────────────────────────────────────┘
+```
 
+2. Work Verification Module
 
-### 2. Work Verification Module
-
+```
 ┌─────────────────────────────────────┐
-│ Work Verification │
+│        Work Verification             │
 ├─────────────────────────────────────┤
-│ • Task definition (standards) │
-│ • Proof-of-work-completion │
-│ • Multi-party attestation │
-│ • Dispute resolution mechanism │
-│ • Reputation scoring │
+│ • Task definition (standards)        │
+│ • Proof-of-work-completion           │
+│ • Multi-party attestation            │
+│ • Dispute resolution mechanism       │
+│ • Reputation scoring                 │
 └─────────────────────────────────────┘
+```
 
+3. Asset Issuance & Management
 
-### 3. Asset Issuance & Management
-
+```
 ┌─────────────────────────────────────┐
-│ Asset Manager │
+│          Asset Manager               │
 ├─────────────────────────────────────┤
-│ • Taproot Assets minting │
-│ • Bitcoin collateralization │
-│ • Redemption smart contracts │
-│ • Liquidity pool management │
-│ • Cross-community exchange │
+│ • Taproot Assets minting             │
+│ • Bitcoin collateralization          │
+│ • Redemption smart contracts         │
+│ • Liquidity pool management          │
+│ • Cross-community exchange           │
 └─────────────────────────────────────┘
+```
 
+4. Payment & Settlement Layer
 
-### 4. Payment & Settlement Layer
-
+```
 ┌─────────────────────────────────────┐
-│ Payment Engine │
+│          Payment Engine              │
 ├─────────────────────────────────────┤
-│ • Lightning channel management │
-│ • Multi-path routing │
-│ • Atomic swaps (Assets↔BTC) │
-│ • Fee optimization │
-│ • Transaction monitoring │
+│ • Lightning channel management       │
+│ • Multi-path routing                 │
+│ • Atomic swaps (Assets↔BTC)          │
+│ • Fee optimization                   │
+│ • Transaction monitoring             │
 └─────────────────────────────────────┘
+```
 
+Transaction Flows
 
-## 🔄 Transaction Flows
+Flow 1: Local Work Payment
 
-### Flow 1: Local Work Payment
+1. Worker completes verifiable task
+2. Work proof submitted to network
+3. Attestation by 3+ parties (including physical verifier)
+4. Local tokens minted to worker's wallet
+5. Worker swaps tokens for BTC via liquidity pool
+6. BTC sent via Lightning to worker's wallet
 
-    Worker completes verifiable task
+Flow 2: Employer Funds Worker
 
-    Work proof submitted to network
+1. Employer deposits BTC to community pool
+2. BTC used as collateral for local token issuance
+3. Employer pays worker in local tokens
+4. Worker redeems tokens for BTC at any time
 
-    Attestation by 3+ parties (including physical verifier)
+Security Considerations
 
-    Local tokens minted to worker's wallet
+Key Risks & Mitigations
 
-    Worker swaps tokens for BTC via liquidity pool
+· Collateral theft: Multi-sig custody, time locks
+· Sybil attacks: Hybrid verification (physical + digital)
+· Liquidity runs: Bonding curves, redemption limits
+· Oracle failure: Decentralized oracle networks
 
-    BTC sent via Lightning to worker's wallet
+Privacy Features
 
+· CoinJoin integration for Bitcoin level
+· Route blinding for Lightning
+· Confidential transactions for Taproot Assets
 
-### Flow 2: Employer Funds Worker
-    Employer deposits BTC to community pool
+Network Topology
 
-    BTC used as collateral for local token issuance
+Initial Deployment Model
 
-    Employer pays worker in local tokens
-
-    Worker redeems tokens for BTC at any time
-
-
-## 🔐 Security Considerations
-
-### Key Risks & Mitigations
-1. **Collateral theft**: Multi-sig custody, time locks
-2. **Sybil attacks**: Hybrid verification (physical + digital)
-3. **Liquidity runs**: Bonding curves, redemption limits
-4. **Oracle failure**: Decentralized oracle networks
-
-### Privacy Features
-- CoinJoin integration for Bitcoin level
-- Route blinding for Lightning
-- Confidential transactions for Taproot Assets
-
-## 🌐 Network Topology
-
-### Initial Deployment Model
-
+```
 Community A ── Bitcoin ── Community B
-     │                        │
-┌────┴────┐              ┌────┴────┐
-│ LN Node │              │ LN Node │
-│ Assets  │              │ Assets  │
-│ Pool    │────Swap─────▶│ Pool    │
-└─────────┘              └─────────┘
+    │               │
+┌───┴────┐      ┌───┴────┐
+│ LN Node│      │ LN Node│
+│ Assets │      │ Assets │
+│ Pool   │──Swap────▶│ Pool   │
+└────────┘      └────────┘
+```
 
+Future: Federated Model
 
-### Future: Federated Model
-
+```
 ┌─────────────────────────────────┐
-│     Federation Layer            │
-│  • Cross-community swaps        │
-│  • Shared liquidity             │
-│  • Dispute resolution           │
+│        Federation Layer          │
+│ • Cross-community swaps          │
+│ • Shared liquidity               │
+│ • Dispute resolution             │
 └─────────────────────────────────┘
-        │                │
-┌───────┴──────┐ ┌───────┴──────┐
-│ Community A  │ │ Community B  │
-└──────────────┘ └──────────────┘
+              │
+    ┌─────────┴─────────┐
+    │                   │
+┌───┴──────┐      ┌───┴──────┐
+│Community │      │Community │
+│    A     │      │    B     │
+└──────────┘      └──────────┘
+```
 
+Scaling Considerations
 
-## 📈 Scaling Considerations
+Phase 1: Single Community
 
-### Phase 1: Single Community
-- One local token
-- ~100-1000 users
-- Manual verification
+· One local token
+· ~100-1000 users
+· Manual verification
 
-### Phase 2: Multi-Community
-- Cross-community swaps
-- Automated verification
-- ~10k users
+Phase 2: Multi-Community
 
-### Phase 3: Federation
-- Shared liquidity pools
-- Decentralized governance
-- Global scale
+· Cross-community swaps
+· Automated verification
+· ~10k users
 
-## 🔗 Integration Points
+Phase 3: Federation
 
-### Wallets Required
-1. **Taproot Assets compatible** (Joltz, etc.)
-2. **Lightning enabled**
-3. **Nostr integration** for identity
+· Shared liquidity pools
+· Decentralized governance
+· Global scale
 
-### Services Needed
-1. **Bitcoin/Lightning nodes**
-2. **Taproot Assets mint**
-3. **Oracle services** for physical verification
-4. **Indexing services** for work proofs
+Integration Points
+
+Wallets Required
+
+· Taproot Assets compatible (Joltz, etc.)
+· Lightning enabled
+· Nostr integration for identity
+
+Services Needed
+
+· Bitcoin/Lightning nodes
+· Taproot Assets mint
+· Oracle services for physical verification
+· Indexing services for work proofs
 
 ---
 
-*This document is living specification. Last updated: 2024*
+This document is a living specification. Last updated: 2024
