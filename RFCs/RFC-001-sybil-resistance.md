@@ -1,4 +1,4 @@
---
+---
 
 RFC-001: Sybil Resistance Mechanisms
 
@@ -145,7 +145,7 @@ Base Score = 0.5
 
 + Local Verification:
   • Seed verifier: +0.3
-  • 1-hop from seed: +0.2  
+  • 1-hop from seed: +0.2
   • 2-hop from seed: +0.1
   • 3-hop from seed: +0.05
 
@@ -274,7 +274,7 @@ Community Feedback from Bitcoin Stack Exchange
 
 "Lesson from Silence: How a Hidden Post Taught Me More Than 10 Answers"
 
-1️⃣ THE CONTEXT (What happened)
+1. The Context (What happened)
 
 · Platform: Bitcoin Stack Exchange
 · Action: Post hidden by Ava Chow (Bitcoin Core)
@@ -283,53 +283,52 @@ Community Feedback from Bitcoin Stack Exchange
 
 At first glance: a failure.
 
-2️⃣ THE ANALYSIS (Why it happened)
+2. The Analysis (Why it happened)
 
 According to Stack Exchange guidelines, questions must be:
 "practical, answerable, and based on actual problems that you face"
 
 What was not allowed:
 
-· ❌ Open-ended questions like "What do you think about...?"
-· ❌ Discussions disguised as questions
-· ❌ Rants disguised as technical inquiries
-· ❌ Questions that would generate multiple equally valid answers
+· Open-ended questions like "What do you think about...?"
+· Discussions disguised as questions
+· Rants disguised as technical inquiries
+· Questions that would generate multiple equally valid answers
 
 And here is the key:
 
 "If your motivation for asking is 'I would like to participate in a discussion about ______', then you should not be asking here."
 
-That is exactly what happened. My question was not seeking a closed answer. It was seeking to open a philosophical debate about human work, value, and protocols.
+That is exactly what happened. The question was not seeking a closed answer. It was seeking to open a philosophical debate about human work, value, and protocols.
 
-And Stack Exchange is not a forum. It is an archive of definitive answers.
+Stack Exchange is not a forum. It is an archive of definitive answers.
 
-3️⃣ THE CONTRADICTION (What I learned)
+3. The Contradiction (What was learned)
 
-What I wanted What Stack Exchange needs
+What I Wanted What Stack Exchange Needs
 Open debate Closed answer
 Philosophical exploration Concrete technical problem
 Collective construction Permanent archive
 Discussion Solution
 
-It wasn't that my question was bad. It was that it didn't fit the mold.
+It wasn't that the question was bad. It was that it didn't fit the mold.
 
 And that, applied to life, is an enormous lesson:
 
 "Not all spaces are designed for what you want to build. Your job is to find the ones that are, or to build your own."
 
-4️⃣ THE FUTURE STRATEGY (What I will do differently)
+4. The Future Strategy (What will be done differently)
 
-1. Stack Exchange is NOT for philosophy. It is for closed technical questions that admit a single answer.
-2. When I return, the question will be:
+1. Stack Exchange is not for philosophy. It is for closed technical questions that admit a single answer.
+2. When returning, the question will be:
    · ❌ "What should a human-work protocol look like?"
    · ✅ "How would I prevent a Sybil attack in a reputation-based work protocol?" (That is technical, closed, answerable)
 3. Philosophical debate belongs elsewhere:
    · GitHub Issues (discussion around RFCs)
    · Discord / own communities
    · Mailing lists (with the proper format)
-   · And here, with you.
 
-5️⃣ THE PHILOSOPHY BEHIND IT (For the RFC)
+5. The Philosophy Behind It (For the RFC)
 
 This setback taught me something that does belong in the RFC:
 
@@ -343,7 +342,7 @@ The Sybil problem is not just technical. It is also social:
 
 That is not solved by an algorithm. It is solved by designing for resistance and adaptation.
 
-6️⃣ CLOSING THE SECTION (To include in the RFC)
+6. Closing the Section (To include in the RFC)
 
 "This document not only proposes an anti-Sybil mechanism. It also documents the process of trying to validate those ideas within existing communities. The silences, the bans, and the hidden posts are data. And as data, they inform the design: a protocol that not only works technically, but knows how to navigate the real world where it will be judged."
 
@@ -374,3 +373,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
